@@ -1,0 +1,81 @@
+#how-it-works {
+    background-color: #64d106; /* Match the background color of the About section */
+    color: #333;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+#how-it-works h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+#how-it-works p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+#how-it-works ol {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+#how-it-works a {
+    background-color: #3498db;
+    color: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#how-it-works a:hover {
+    background-color: #2980b9;
+}
+
+#upcoming-events {
+    background-color: #4799a4; /* Match the background color of the About section */
+    color: #100e0e;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+#upcoming-events h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+#upcoming-events p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+#upcoming-events ul {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+#upcoming-events a {
+    background-color: #3498db;
+    color: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#upcoming-events a:hover {
+    background-color: #2980b9;
+}

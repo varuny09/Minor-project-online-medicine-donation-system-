@@ -1,0 +1,151 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Donation Form</title>
+    <link rel="stylesheet" href="stylesform.css">
+    <link rel="stylesheet" href="required.css">
+</head>
+<body>
+
+<div class="medicine-donation-container">
+    <form action="donationform.php" method="post" class="medicine-donation-form">
+        <div class="medicine-donation-form-title">
+            <h2>Medicine Donation Form</h2>
+            <hr>
+        </div>
+        <input type="text" name="donor_name" placeholder="Your Name" class="medicine-donation-input" required>
+        <input type="email" name="donor_email" placeholder="Your Email" class="medicine-donation-input" required>
+        <input type="text" name="medicine_name" placeholder="Medicine Name" class="medicine-donation-input" required>
+        <input type="number" name="quantity" placeholder="Quantity" class="medicine-donation-input" required>
+        <textarea name="message" placeholder="Additional Information" class="medicine-donation-input" required></textarea>
+        <button type="submit">Donate Medicine</button>
+    </form>
+</div>
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('.medicine-donation-form');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Perform basic form validation
+            if (validateForm()) {
+                // If validation passes, submit the form
+                form.submit();
+            }
+        });
+         
+
+        if (!userSignedIn) {
+            // If user is not signed in, display a pop-up
+            alert('Please sign in to fill the donation form.');
+        }
+    });
+
+    function validateForm() {
+        const nameInput = document.querySelector('input[name="donor_name"]');
+        const emailInput = document.querySelector('input[name="donor_email"]');
+        const medicineNameInput = document.querySelector('input[name="medicine_name"]');
+        const quantityInput = document.querySelector('input[name="quantity"]');
+        const messageTextarea = document.querySelector('textarea[name="message"]');
+
+        // Reset previous validation styles
+        resetValidationStyles();
+
+        let isValid = true;
+
+        // Validate donor name
+        if (nameInput.value.trim() === '') {
+            isValid = false;
+            displayValidationError(nameInput, 'Please enter your name');
+        }
+
+        // Validate donor email
+        if (!isValidEmail(emailInput.value.trim())) {
+            isValid = false;
+            displayValidationError(emailInput, 'Please enter a valid email address');
+        }
+
+        // Validate medicine name
+        if (medicineNameInput.value.trim() === '') {
+            isValid = false;
+            displayValidationError(medicineNameInput, 'Please enter the medicine name');
+        }
+
+        // Validate quantity (ensure it's a positive number)
+        const quantityValue = parseFloat(quantityInput.value);
+        if (isNaN(quantityValue) || quantityValue <= 0) {
+            isValid = false;
+            displayValidationError(quantityInput, 'Please enter a valid quantity');
+        }
+
+        // Validate message
+        if (messageTextarea.value.trim() === '') {
+            isValid = false;
+            displayValidationError(messageTextarea, 'Please provide additional information');
+        }
+
+        return isValid;
+    }
+
+    function isValidEmail(email) {
+        // Simple email validation regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    function displayValidationError(inputElement, errorMessage) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'validation-error';
+        errorDiv.textContent = errorMessage;
+
+        inputElement.parentNode.appendChild(errorDiv);
+
+        // Add a red border to highlight the input with an error
+        inputElement.classList.add('error-border');
+    }
+
+    function resetValidationStyles() {
+        const errorDivs = document.querySelectorAll('.validation-error');
+        errorDivs.forEach(div => div.remove());
+
+        const errorInputs = document.querySelectorAll('.error-border');
+        errorInputs.forEach(input => input.classList.remove('error-border'));
+    }
+    
+// This is a mock user for the sake of this example.
+// In a real application, you would fetch user data from your database.
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('.medicine-donation-form');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Perform basic form validation
+        if (validateForm()) {
+            // If validation passes, submit the form
+            form.submit();
+        }
+    });
+
+    const userSignedIn = false; // Set this to true or false based on user authentication
+
+    if (confirm('Please sign in to fill the donation form.')) {
+            // If user confirms, redirect to login.php
+            
+        }
+});
+
+
+
+</script>
+
+</body>
+</html>

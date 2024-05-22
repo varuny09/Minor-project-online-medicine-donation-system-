@@ -1,0 +1,103 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #d8e4d4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .contact-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('your-background-image.jpg'); /* Replace 'your-background-image.jpg' with the actual path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .contact-left {
+    width: 40%;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9); /* Add transparency for a softer look */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  .contact-left-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .contact-left input,
+  .contact-left textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+  }
+  
+  .contact-left input:focus,
+  .contact-left textarea:focus {
+    border-color: #4caf50;
+  }
+  
+  .contact-left textarea {
+    resize: vertical;
+  }
+  
+  .contact-left button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-left button:hover {
+    background-color: #45a049;
+  }
+  
+  .contact-right {
+    width: 40%;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .contact-right img {
+    width: 100%;
+    height: auto;
+    animation: fadeIn 1s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+  
+    .contact-left,
+    .contact-right {
+        width: 80%;
+        margin: 10px 0;
+    }
+  }
+  
